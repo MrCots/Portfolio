@@ -1,0 +1,517 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(135deg, #000000 0%, #111111 50%, #333333 100%);
+}
+
+h1, p {
+    color: white;
+}
+
+/* Estilos base */
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    flex: 1;
+}
+
+.titus {
+    display: flex;
+    position: relative;
+    bottom: 15rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    background-color: beige;
+    -webkit-text-stroke: 1px #333;
+    color: white;
+    text-shadow: 
+        2px 2px 0 #000,
+        -2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000;
+    /* Agregar estas líneas para centrado */
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+    width: 100%;             /* Ocupa todo el ancho */
+}
+
+
+
+h3 {
+    font-family: "Lexend Giga", Arial;
+    color: white;
+}
+.lol {
+    text-align: center;
+}
+.Presentation {
+    color: white;
+    text-align: center;
+}
+
+p h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer p{
+ color: white;
+ text-align: center;
+}
+
+.contactinfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.contactinfo p {
+    font-size: 1.2rem;
+    color: white;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.contactinfo p:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos para los enlaces */
+.contactinfo a {
+    color: #00ff00;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contactinfo a:hover {
+    color: #00cc00;
+}
+
+.Foto-Daniel {
+    height: 50%;
+    width: 50%;
+}
+
+.menu-navegacion {
+    background-color: black;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.logo-daniel:hover {
+    background-color: #333333;
+}
+
+.navigation {
+    display: flex;
+    list-style-type: none;
+    margin-left: 50%; /* Esto moverá los enlaces hacia la derecha */
+    
+}
+
+
+
+
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    color: #ccc;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-item {
+    overflow: hidden;
+    height: 100%;
+}
+
+.project-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-image {
+    width: 100%;
+    height: 40%; /* Altura fija para las imágenes */
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Estilos opcionales para mejorar la presentación */
+.project-item:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+
+
+/* Estilos para los enlaces */
+a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+ /*Begin mobile screen*/
+ @media screen and (max-width:639px) {
+    
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+    }
+    .row {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    
+    }
+
+    /*codigo base hamburguer y nav */
+
+    .hamburger {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1000;
+        
+    }
+    
+    .hamburger-icon {
+        width: 50px;
+        height: 50px;
+        position: relative;
+        bottom: 1.5rem;
+        background-color: transparent;
+        border-radius: 5rem;
+        object-fit: contain;
+
+        
+    }
+    
+    .navigation {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        visibility: hidden;
+        gap: 1rem;
+        background-color: black;
+        padding: 1rem;
+        border-radius: 8px;
+        z-index: 999;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    
+    .navigation.active {
+        display: flex;
+        animation: slideDown 0.3s ease-out;
+        visibility: visible;
+    }
+    
+    .navigation li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .navigation a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem;
+        transition: color 0.2s;
+    }
+    
+    .navigation a:hover {
+        color: #ccc;
+    }
+    
+    /* Animación de despliegue */
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -60%);
+        }
+        to {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+    }
+    
+    /*fin estilos base*/
+     h1, p{
+        display: flex;
+        justify-content: center;
+         /* Eliminar márgenes por defecto */
+        
+    }
+    .logo-daniel {
+        display: none;
+    }
+
+    .hamburger {
+        top: 20px;
+        left: 20px;
+        transform: none;
+        padding: 10px;
+        max-width: 60px;
+        max-height: 60px;
+        display: flex !important;
+        
+    }
+    
+    .navigation {
+        top: 80px;
+        left: 20px;
+        transform: none;
+        width: 200px;
+    }
+    
+    footer {
+        margin-top: auto;
+        background-color: black;
+        padding: 1rem;
+    }
+  
+    
+   /* nav{
+        border-radius: 1.0em; /*This rounds the corners of elements
+    } */
+    
+    .column-right {
+        text-align: center;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        font-size: 1.4rem;
+    }
+
+    .Foto-DanielAbout{
+        display: none;
+    }
+    .Presentation {
+        margin-left: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .contactinfo p {
+        font-size: 1rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .titus {
+        top: 1.2rem;
+        font-size: 1.5rem;
+        text-align: center;
+    
+    }
+
+
+    #message {
+        font-family: "Lexend Giga";
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-item p {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+        font-size: 0.75rem;
+    }
+
+    footer {
+        margin-top: auto;
+    }
+}
+    
+   
+   /*End mobile.*/
+
+    /*Begin tablet screen*/
+    @media screen and (min-width:640px) {
+    
+        h1 {
+            font-size: 2.2rem;
+        }
+        
+        .contactinfo p {
+            font-size: 1.1rem;
+            padding: 0.4rem 1rem;
+        }
+    }
+
+        #message {
+            font-family: "Lexend Giga";
+            flex-direction: column;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 5rem;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+
+        }
+
+        .navigation li{
+            font-size: 1.5rem;
+            border-radius: 5rem;
+            opacity: 0.45;
+        }
+    
+        .project-item p {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+            font-size: 1.2rem;
+        }
+
+        
+        .titus {
+        top: 1.2rem;
+         font-size: 2.5rem;
+            }
+        
+    
+        .hamburger-icon {
+                width: 40px;
+                height: 40px;
+                object-fit: contain;
+                background-color: transparent;
+                border-radius: 5rem;
+            }
+         
+            .hamburger {
+                display: none;
+              }
+              .hamburguer-icon {
+                display: none;
+              }
+
+       
+       /*End tablet.*/
+
+        /*Begin desktop screen*/
+   @media screen and (min-width:961px) {
+
+    
+
+    h1 {
+        font-size: 2.8rem;
+    }
+    
+    .contactinfo p {
+        font-size: 1.3rem;
+        padding: 0.6rem 1.2rem;
+    }
+    .Presentation {
+        top: 5rem;
+        position: relative;
+        font-size: 2.5rem;
+        margin: 0;
+    }
+    
+    .desktop{
+        display:block;
+    }
+    
+    .navigation li {
+        margin-left: 10rem;
+        margin-right: 2rem;
+        
+    }
+    .contenedor {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+    .column-center {
+        width: 50%;
+        position: relative;
+        bottom: 45rem;
+        left: 50rem;
+    }
+
+    .column-center p {
+        font-family: "Lexend Giga", Arial;
+        color: white;
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    .column-right {
+        width: 50%;
+        position: relative;
+        bottom: 40rem;
+        left: 50rem;
+    }
+   .column-right p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+   }
+  .hamburger {
+    display: none;
+  }
+  .hamburguer-icon {
+    display: none;
+  }
+  
+    
+
+   }
+   /*End desktop.*/
