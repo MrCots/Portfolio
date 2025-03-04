@@ -367,9 +367,33 @@ a {
         text-align: center;
     }
 
+    #grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    
+    .project-item {
+        overflow-wrap: break-word;
+        height: auto;
+        min-height: 150px;
+    }
+    
+    .project-link {
+        height: auto;
+        min-height: 150px;
+    }
+    
+    .project-image {
+        height: 150px;
+        object-fit: cover;
+    }
     .project-item p {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-        font-size: 0.75rem;
+        font-size: 0.85rem;
+        padding: 10px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
     }
 
     footer {
